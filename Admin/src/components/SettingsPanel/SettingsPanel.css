@@ -1,0 +1,159 @@
+/* OVERLAY */
+.sp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
+
+/* PANEL */
+.sp-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 360px;
+  height: 100vh;
+
+  background: rgba(255,255,255,0.85);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+
+  box-shadow: -12px 0 40px rgba(0,0,0,0.2);
+  z-index: 1000;
+
+  padding: 20px;
+  overflow-y: auto;
+
+  animation: slide 0.3s ease;
+}
+
+@keyframes slide {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* HEADER */
+.sp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sp-close {
+  background: #f3f3f3;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* CARD */
+.sp-card {
+  background: rgba(255,255,255,0.7);
+  border-radius: 14px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+/* ROW */
+.sp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+/* TOGGLE */
+.sp-toggle {
+  width: 44px;
+  height: 24px;
+  border-radius: 20px;
+  background: #ddd;
+  position: relative;
+  cursor: pointer;
+}
+
+.sp-toggle::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.sp-toggle.on {
+  background: linear-gradient(135deg, #ff7a18, #ff3d00);
+}
+
+.sp-toggle.on::after {
+  left: 22px;
+}
+
+/* DROPDOWN */
+.sp-select {
+  position: relative;
+}
+
+.sp-select button {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  background: white;
+  cursor: pointer;
+}
+
+.sp-dropdown {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.sp-dropdown div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sp-dropdown div:hover {
+  background: #ff6b35;
+  color: white;
+}
+
+/* BUTTON */
+.sp-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.sp-btn.primary {
+  background: linear-gradient(135deg, #ff7a18, #ff3d00);
+  color: white;
+}
+
+.sp-btn.danger {
+  background: #ff4d4f;
+  color: white;
+}
+
+.sp-msg {
+  font-size: 12px;
+  color: green;
+  margin-top: 5px;
+} 

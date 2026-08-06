@@ -1,0 +1,7 @@
+[data-compact="true"] table tr {
+  height: 35px;
+}
+
+[data-compact="true"] td {
+  padding: 6px;
+}

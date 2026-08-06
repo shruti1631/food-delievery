@@ -1,0 +1,15 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; color: #333; }
+
+[data-theme='dark'] body {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+[data-compact='true'] .admin-content {
+  font-size: 13px;
+}
+
+[data-compact='true'] table tr {
+  height: 40px;
+}

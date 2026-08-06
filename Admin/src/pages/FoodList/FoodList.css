@@ -1,0 +1,38 @@
+.food-list { padding: 30px; }
+.food-list h2 { font-size: 22px; font-weight: 600; margin-bottom: 25px; color: #1a1a1a; }
+.food-list-table { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+.food-list-header, .food-list-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 1fr 100px;
+  align-items: center;
+  padding: 14px 20px;
+  gap: 15px;
+}
+.food-list-header { background: #f8f9fa; font-weight: 600; font-size: 14px; color: #555; border-bottom: 1px solid #eee; }
+.food-list-row { border-bottom: 1px solid #f0f0f0; font-size: 14px; color: #333; }
+.food-list-row:hover { background: #fafafa; }
+.food-list-row img { width: 60px; height: 60px; object-fit: cover; border-radius: 8px; }
+.food-list-row button { background: #ff4444; color: #fff; border: none; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.food-list-row button:hover { background: #cc0000; }
+
+/* Dark Mode */
+[data-theme='dark'] .food-list h2 { color: #f0f0f0; }
+[data-theme='dark'] .food-list-table { background: #1e1e1e; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+[data-theme='dark'] .food-list-header { background: #2a2a2a; color: #ccc; border-bottom-color: #333; }
+[data-theme='dark'] .food-list-row { border-bottom-color: #2a2a2a; color: #e0e0e0; }
+[data-theme='dark'] .food-list-row:hover { background: #252525; }
+
+/* Compact View */
+[data-compact='true'] .food-list-header,
+[data-compact='true'] .food-list-row {
+  padding: 10px 15px;
+}
+
+[data-compact='true'] .food-list-row img {
+  width: 45px;
+  height: 45px;
+}
+
+[data-compact='true'] .food-list-row {
+  font-size: 13px;
+}

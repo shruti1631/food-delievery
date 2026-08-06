@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+.aime-wrap {
+  position: relative;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  z-index: 100;
+}
+
+/* ── TRIGGER BUTTON ── */
+.aime-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 107, 26, 0.08);
+  border: 1.5px solid rgba(255, 107, 26, 0.35);
+  color: #FF6B1A;
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.aime-trigger:hover,
+.aime-trigger.active {
+  background: #FF6B1A;
+  color: #fff;
+  border-color: #FF6B1A;
+}
+.aime-trigger-icon { font-size: 15px; }
+.aime-trigger-arrow {
+  font-size: 12px;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+.aime-trigger-arrow.up { transform: rotate(180deg); }
+
+/* ── DROPDOWN PANEL ── */
+.aime-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 340px;
+  background: #0f0600;
+  border: 1px solid rgba(255, 107, 26, 0.3);
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: panelIn 0.22s ease both;
+  z-index: 999;
+}
+@keyframes panelIn {
+  from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── PANEL HEADER ── */
+.aime-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.aime-head-left { display: flex; align-items: center; gap: 10px; }
+.aime-head-icon { font-size: 22px; }
+.aime-head-title { font-size: 13px; font-weight: 700; color: #fff; }
+.aime-head-sub   { font-size: 10px; color: rgba(255,255,255,0.4); margin-top: 1px; }
+.aime-live-badge {
+  font-size: 9px;
+  color: #FF6B1A;
+  border: 1px solid rgba(255,107,26,0.4);
+  padding: 3px 8px;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  animation: badgeBlink 1.4s infinite;
+}
+@keyframes badgeBlink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+/* ── BREADCRUMB ── */
+.aime-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+.aime-bc {
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.aime-bc.done { color: #FF9955; }
+.aime-bc-sep { font-size: 11px; color: rgba(255,255,255,0.15); }
+
+/* ── STEPS ── */
+.aime-step { display: flex; flex-direction: column; gap: 10px; }
+.aime-step-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+/* ── MOOD GRID ── */
+.aime-mood-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.aime-mood-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 12px 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.aime-mood-btn:hover {
+  background: rgba(255,107,26,0.12);
+  border-color: rgba(255,107,26,0.4);
+  transform: translateY(-2px);
+}
+.aime-mood-emoji { font-size: 24px; }
+.aime-mood-name  { font-size: 11px; color: rgba(255,255,255,0.75); font-weight: 600; }
+
+/* ── MOOD SELECTED BADGE ── */
+.aime-mood-selected {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.aime-mood-selected strong { font-size: 13px; color: #fff; font-weight: 700; display: block; }
+.aime-mood-selected p { font-size: 11px; color: rgba(255,255,255,0.45); margin: 2px 0 0; }
+
+/* ── PREFERENCE GRID ── */
+.aime-pref-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.aime-pref-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.75);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.aime-pref-btn:hover {
+  background: rgba(255,107,26,0.12);
+  border-color: rgba(255,107,26,0.4);
+  color: #fff;
+}
+.aime-pref-emoji { font-size: 18px; }
+
+/* ── COMBO HEADER ── */
+.aime-combo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.aime-combo-title {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+}
+.aime-combo-title strong { color: #FFAE4A; }
+
+/* ── COMBO CARDS ── */
+.aime-combos { display: flex; flex-direction: column; gap: 8px; }
+.aime-combo-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 10px 14px;
+  transition: border-color 0.2s;
+}
+.aime-combo-card:hover { border-color: rgba(255,107,26,0.3); }
+.aime-combo-left { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.aime-combo-tag {
+  display: inline-block;
+  font-size: 9px;
+  color: #FFAE4A;
+  background: rgba(255,174,74,0.1);
+  border: 1px solid rgba(255,174,74,0.2);
+  padding: 2px 8px;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  margin-bottom: 3px;
+}
+.aime-combo-name { font-size: 13px; font-weight: 700; color: #fff; }
+.aime-combo-desc { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 1px; }
+.aime-combo-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  margin-left: 10px;
+}
+.aime-combo-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: #FF6B1A;
+}
+.aime-add-btn {
+  background: #FF6B1A;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.aime-add-btn:hover { background: #e85a0a; }
+.aime-add-btn.added { background: #16a34a; }
+
+.aime-combo-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-right: 10px;
+  background: rgba(255,255,255,0.05);
+}
+.aime-qty-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,107,26,0.12);
+  border-radius: 50px;
+  padding: 3px 8px;
+}
+.aime-qty-control button {
+  background: #FF6B1A;
+  color: #fff;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.aime-qty-control span { font-size: 12px; font-weight: 700; color: #fff; min-width: 12px; text-align: center; }
+.aime-empty {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 20px 10px;
+}
+
+/* ── PERSONALIZE BAR ── */
+.aime-personalize-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,107,26,0.08);
+  border: 1px solid rgba(255,107,26,0.2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+.aime-personalize-bar strong { color: #FFAE4A; }
+.aime-bundle-btn {
+  margin-left: auto;
+  flex-shrink: 0;
+  background: #FF6B1A;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  white-space: nowrap;
+}
+
+/* ── BACK BUTTON ── */
+.aime-back-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.4);
+  padding: 7px 14px;
+  border-radius: 50px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: all 0.2s;
+  width: fit-content;
+}
+.aime-back-btn:hover { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); }
+.aime-back-btn.small { padding: 4px 10px; font-size: 10px; }

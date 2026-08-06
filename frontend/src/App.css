@@ -1,0 +1,92 @@
+/* App.css */
+.App {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.App-header {
+  text-align: center;
+  background-color: #ff6b35;
+  color: white;
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.App-header p {
+  margin: 10px 0 0 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.menu, .cart {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(29, 215, 12, 0.1);
+}
+
+.menu h2, .cart h2 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #ff6b35;
+  padding-bottom: 10px;
+}
+
+.menu-items, .cart-items {
+  display: grid;
+  gap: 15px;
+}
+
+/* 🔔 CHAT BOX (NEW ADD) */
+.chat-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 280px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 999; /* sabke upar dikhne ke liye */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+  }
+
+  .App-header {
+    padding: 20px 10px;
+  }
+
+  .App-header h1 {
+    font-size: 2rem;
+  }
+
+  .menu, .cart {
+    padding: 15px;
+  }
+
+  /* mobile me thoda adjust */
+  .chat-box {
+    width: 90%;
+    right: 5%;
+    bottom: 10px;
+  }
+}

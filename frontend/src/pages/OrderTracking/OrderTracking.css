@@ -1,0 +1,368 @@
+.order-tracking {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tracking-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tracking-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin: 1rem 0;
+  font-weight: 700;
+}
+
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.order-id {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+}
+
+.cancel-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.cancel-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.tracking-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+/* Timeline Section */
+.timeline-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-section h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #27ae60, #2980b9, #e74c3c);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 6rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-item.completed {
+  opacity: 1;
+}
+
+.timeline-circle {
+  position: absolute;
+  left: 0.25rem;
+  top: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: white;
+  border: 3px solid #bdc3c7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.timeline-item.completed .timeline-circle {
+  background: #27ae60;
+  border-color: #27ae60;
+  box-shadow: 0 0 15px rgba(39, 174, 96, 0.4);
+}
+
+.status-icon {
+  font-size: 1.2rem;
+  filter: brightness(0.8);
+}
+
+.timeline-item.completed .status-icon {
+  filter: brightness(1.2);
+  color: white;
+}
+
+.timeline-content h3 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.timeline-content p {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+}
+
+.timeline-time {
+  display: block;
+  color: #95a5a6;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Details Section */
+.details-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.details-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.details-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.details-card h2 {
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.delivery-info {
+  text-align: center;
+}
+
+.time-remaining {
+  font-size: 1.5rem;
+  color: #27ae60;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.delivery-time {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+.address {
+  color: #2c3e50;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #3498db;
+}
+
+.item-info h4 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.item-info p {
+  margin: 0.25rem 0 0 0;
+  color: #7f8c8d;
+  font-size: 0.85rem;
+}
+
+.item-price {
+  color: #27ae60;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.payment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ecf0f1;
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+.info-row.total {
+  border-bottom: none;
+  border-top: 2px solid #ecf0f1;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.payment-method {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.payment-method .paid {
+  color: #27ae60;
+  font-weight: 700;
+}
+
+.payment-method .pending {
+  color: #f39c12;
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tracking-container {
+    grid-template-columns: 1fr;
+  }
+
+  .tracking-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .timeline-section {
+    padding: 1.5rem;
+  }
+
+  .timeline::before {
+    left: 1rem;
+  }
+
+  .timeline-item {
+    padding-left: 4.5rem;
+  }
+
+  .timeline-circle {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-tracking {
+    padding: 1rem;
+  }
+
+  .tracking-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .back-btn {
+    position: static;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .tracking-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .timeline-section {
+    padding: 1rem;
+  }
+
+  .details-card {
+    padding: 1rem;
+  }
+}

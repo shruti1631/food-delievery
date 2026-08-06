@@ -1,0 +1,13 @@
+[data-theme="dark"] body {
+  background: #121212;
+  color: #fff;
+}
+
+[data-theme="dark"] .admin-content {
+  background: #1e1e1e;
+}
+
+[data-theme="dark"] .sp-panel {
+  background: rgba(30,30,30,0.9);
+  color: white;
+}
