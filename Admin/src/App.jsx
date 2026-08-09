@@ -20,7 +20,7 @@ const App = () => {
   const [openSettings, setOpenSettings] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('adminToken'))
 
-  const url = "http://localhost:5000"
+  const url = "https://food-delievery-rpr2.onrender.com";
 
   if (!isLoggedIn) {
     return (
