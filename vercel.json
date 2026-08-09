@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "Admin/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    }
+  ],
+  "routes": [
+    { "src": "/admin/(.*)", "dest": "/Admin/$1" },
+    { "src": "/admin", "dest": "/Admin/index.html" },
+    { "src": "/(.*)", "dest": "/frontend/$1" }
+  ]
+}

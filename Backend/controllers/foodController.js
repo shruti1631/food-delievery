@@ -1,4 +1,4 @@
-import Food from "../models/Food.js";
+import food from "../models/food.js";
 import fs from "fs";
 
 // ✅ Add food — image req.file se aayegi (multer)
@@ -12,7 +12,7 @@ export const addFood = async (req, res) => {
     if (!name || !price || !category || !image) {
       return res.json({
         success: false,
-        message: "All fields required including image ❌",
+        message: "All fields required including image ",
       });
     }
 

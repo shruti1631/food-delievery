@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: false,
     unique: true,
-    sparse: true,        // ✅ allows many users to have no email without unique-clash
+    sparse: true,        
     lowercase: true,
     trim: true,
     match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email']
@@ -25,7 +25,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: false,
     unique: true,
-    sparse: true          // ✅ allows many users to have no phone without unique-clash
+    sparse: true          
   },
   address: {
     type: String,

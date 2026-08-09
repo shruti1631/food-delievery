@@ -8,7 +8,6 @@ const foodSchema = mongoose.Schema({
   category: String,
 });
 
-// ✅ Fix — pehle check karo model exist karta hai ya nahi
 const Food = mongoose.models.Food || mongoose.model("Food", foodSchema);
 
 export default Food;
