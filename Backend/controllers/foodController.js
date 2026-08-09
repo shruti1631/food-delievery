@@ -1,4 +1,4 @@
-import food from "../models/food.js";
+import Food from "../models/food.js";
 import fs from "fs";
 
 // ✅ Add food — image req.file se aayegi (multer)
@@ -6,13 +6,13 @@ export const addFood = async (req, res) => {
   try {
     const { name, price, category, description } = req.body;
 
-    // ✅ FIX: image multer se aayegi, req.body se nahi
+    // Image multer se aayegi
     const image = req.file ? req.file.filename : null;
 
     if (!name || !price || !category || !image) {
       return res.json({
         success: false,
-        message: "All fields required including image ",
+        message: "All fields required including image",
       });
     }
 
@@ -31,16 +31,15 @@ export const addFood = async (req, res) => {
       message: "Food added successfully ✅",
       data: food,
     });
-
   } catch (error) {
     console.log(error);
+
     res.json({
       success: false,
       message: error.message,
     });
   }
 };
-
 
 // ✅ Get all foods
 export const getFoods = async (req, res) => {
@@ -52,16 +51,15 @@ export const getFoods = async (req, res) => {
       count: foods.length,
       data: foods,
     });
-
   } catch (error) {
     console.log(error);
+
     res.json({
       success: false,
       message: error.message,
     });
   }
 };
-
 
 // ✅ Delete food — image bhi uploads folder se delete hogi
 export const deleteFood = async (req, res) => {
@@ -75,24 +73,28 @@ export const deleteFood = async (req, res) => {
       });
     }
 
-    // Image file bhi delete karo
+    // Food find karo
     const food = await Food.findById(id);
+
+    // Image file bhi delete karo
     if (food && food.image) {
       const imagePath = `uploads/${food.image}`;
+
       if (fs.existsSync(imagePath)) {
         fs.unlinkSync(imagePath);
       }
     }
 
+    // Food database se delete karo
     await Food.findByIdAndDelete(id);
 
     res.json({
       success: true,
       message: "Food Deleted Successfully ✅",
     });
-
   } catch (error) {
     console.log(error);
+
     res.json({
       success: false,
       message: error.message,
