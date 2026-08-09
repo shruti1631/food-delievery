@@ -8,7 +8,7 @@ const StoreContextProvider = (props) => {
   const [token, setToken] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const url = "http://localhost:5000";
+  const url = https://food-delievery-rpr2.onrender.com
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
