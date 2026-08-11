@@ -11,7 +11,7 @@ A full-stack food delivery web application built with the MERN stack (MongoDB, E
 - Browse food by category, search menu
 - **AI Mood Engine** — recommends real menu items based on mood + food preference
 - Cart with live quantity management
-- Checkout with **Cash on Delivery** or **Online Payment (Razorpay)**
+- Checkout with **Cash on Delivery**
 - Order tracking with live status timeline
 - Order history
 
@@ -31,7 +31,6 @@ A full-stack food delivery web application built with the MERN stack (MongoDB, E
 **Backend:** Node.js, Express
 **Database:** MongoDB (Mongoose)
 **Auth:** JWT, bcrypt password hashing
-**Payments:** Razorpay
 **SMS/OTP:** Fast2SMS
 
 ---
@@ -96,11 +95,10 @@ cd ../Backend
 node seed.js
 ```
 
----
-
 ## 🔐 Environment Variables
 
 Create a `.env` file inside `Backend/` (see `.env.example` for the full list):
+<img width="1920" height="1080" alt="Screenshot 2026-04-28 173423" src="https://github.com/user-attachments/assets/becbee85-01a4-4b3a-a30f-6ef7e8c0466d" />
 
 | Variable | Description |
 |---|---|
@@ -110,16 +108,41 @@ Create a `.env` file inside `Backend/` (see `.env.example` for the full list):
 | `FAST2SMS_API_KEY` | For sending OTP via SMS (optional in dev — OTP prints to console if not set) |
 | `PORT` | Backend server port (default 5000) |
 
-> ⚠️ Never commit your real `.env` file. It's already excluded via `.gitignore`.
-
----
-
 ## 📌 Notes
 
 - In development, the frontend runs on its own dev server (`localhost:5173`) for hot-reloading. To serve everything from a single host (`localhost:5000`), run `npm run build` inside both `frontend/` and `Admin/` — the backend serves the built files automatically.
 - If `FAST2SMS_API_KEY` isn't set, OTPs are printed to the backend terminal instead of being sent via SMS — useful for local testing without spending SMS credits.
 
----
+🛡️ Security
+
+Security considerations implemented in the project include:
+
+JWT authentication
+Password hashing with bcrypt.js
+Protected API routes
+Environment variables for sensitive credentials
+.gitignore configuration
+Server-side authentication checks
+
+👩‍💻 Developer
+Shruti Mishra
+
+MCA Graduate | Frontend Developer | Aspiring Data Analyst
+
+I enjoy building practical applications and learning modern technologies in web development, data analytics, and software engineering.
+
+Connect With Me
+GitHub: https://github.com/shruti1631
+LinkedIn: https://www.linkedin.com/in/shruti-mishra-1b9556291/
+
+Deployment
+▲ Vercel — Frontend & Admin
+🚀 Render — Backend
+🐙 GitHub — Source Code & Version Control
+
+⭐ Support
+
+If you found this project useful or interesting, consider giving it a ⭐ on GitHub.
 
 ## 📄 License
 
