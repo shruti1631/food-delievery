@@ -95,16 +95,20 @@ cd ../Backend
 node seed.js
 ```
 
-## 🔐 Environment Variables
+🔑 Environment Variables
+Create a .env file inside the Backend folder.
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+RAZORPAY_KEY_ID=your_razorpay_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+FAST2SMS_API_KEY=your_fast2sms_api_key
+PORT=5000
 
-Create a `.env` file inside `Backend/` (see `.env.example` for the full list):
-<img width="1920" height="1080" alt="Screenshot 2026-04-28 173423" src="https://github.com/user-attachments/assets/becbee85-01a4-4b3a-a30f-6ef7e8c0466d" />
 
 | Variable | Description |
 |---|---|
 | `MONGO_URI` | MongoDB connection string |
 | `JWT_SECRET` | Secret key for signing JWT tokens |
-| `RAZORPAY_KEY_ID` / `RAZORPAY_KEY_SECRET` | Razorpay test/live API keys |
 | `FAST2SMS_API_KEY` | For sending OTP via SMS (optional in dev — OTP prints to console if not set) |
 | `PORT` | Backend server port (default 5000) |
 
