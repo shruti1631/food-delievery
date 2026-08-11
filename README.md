@@ -96,11 +96,10 @@ node seed.js
 ```
 
 🔑 Environment Variables
+
 Create a .env file inside the Backend folder.
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
-RAZORPAY_KEY_ID=your_razorpay_key_id
-RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 FAST2SMS_API_KEY=your_fast2sms_api_key
 PORT=5000
 
